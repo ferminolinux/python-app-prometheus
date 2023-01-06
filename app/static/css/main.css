@@ -1,0 +1,38 @@
+
+.jjba {
+        position: relative; 
+        height: 100vh;
+        width: 100vw;
+}
+
+#logo {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.jjba img:hover {
+    cursor: pointer;
+}
+
+#nav-bar {
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+#nav-bar img {
+    height: 12vh;
+    width: 12wh;
+}
+
+a:link {
+    text-decoration: none;
+}
