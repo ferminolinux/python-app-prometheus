@@ -1,5 +1,7 @@
 FROM docker.io/python:alpine3.17
 
+ENV REQUEST_LATENCY 0 
+
 RUN set -exo pipefail ; \
     
     apk add py3-pip ;  \
@@ -20,7 +22,7 @@ RUN pip install \
     Flask-Exceptions \
     prometheus-client ;
 
-EXPOSE 80
+EXPOSE 5000
 
 CMD ["python", "jojoba.py"]
         

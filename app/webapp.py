@@ -15,7 +15,7 @@ class WebApp(Flask):
        Markdown(self)
        
        # PROPERTIES
-       self._request_interval = None
+       self._request_latency = 0
        
        ## MAP URLS
        self.add_url_rule('/', 'index', self.__index)
@@ -77,11 +77,11 @@ class WebApp(Flask):
         
         return render_template('md.html', md=tmp_md), 200
     
+    def set_request_latency(self, num: int):
+        self._request_latency = num
+    
     def __metrics(self):
         return generate_latest()
-    
-    def set_request_interval(self, num: int):
-        self._request_interval = num
         
     def __sleep_request(self):
-        sleep(self._request_interval)
+        sleep(self._request_latency)
