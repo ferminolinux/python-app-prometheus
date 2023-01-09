@@ -25,14 +25,14 @@ class WebApp(Flask):
        self.add_url_rule('/metrics', 'metrics', self.__metrics)
        
     
-    @HTTP_REQUEST_LATENCY.labels('jjoba', '/').time()
+    @HTTP_REQUEST_LATENCY.labels('jojoba', '/').time()
     @HTTP_REQUEST_IN_PROGRESS.labels("jojoba", '/').track_inprogress()
     def __index(self):
         self.__sleep_request()
         HTTP_REQUESTS_TOTAL.labels('jojoba', '/', 200).inc()
         return render_template('index.html'), 200
     
-    @HTTP_REQUEST_LATENCY.labels('jjoba', '/').time()
+    @HTTP_REQUEST_LATENCY.labels('jojoba', '/').time()
     @HTTP_REQUEST_IN_PROGRESS.labels("jojoba", '/').track_inprogress()
     def __wth(self):
         self.__sleep_request()
@@ -47,7 +47,7 @@ class WebApp(Flask):
                 tmp_md = f.read()
             return  tmp_md
      
-    @HTTP_REQUEST_LATENCY.labels('jjoba', '/').time()
+    @HTTP_REQUEST_LATENCY.labels('jojoba', '/').time()
     @HTTP_REQUEST_IN_PROGRESS.labels("jojoba", '/').track_inprogress()   
     @HTTP_EXCEPTIONS_TOTAL.labels('jojoba', '/part/', 404).count_exceptions()
     def __part(self, num: str):
