@@ -7,7 +7,7 @@ Uma simples aplicação python-flask instrumentalizada para entregar métricas p
 Caso deseje executar a imagem para testes simples  
 
 ```bash
-docker run --name jjba -p 8080:5000 -d jjba:latest
+docker run --name jojoba -p 8080:5000 -d jjba:latest
 ```
 
 ## Variáveis de ambiente
@@ -15,5 +15,5 @@ docker run --name jjba -p 8080:5000 -d jjba:latest
 **REQUEST_LATENCY:**&nbsp;&nbsp; Adiciona um intervalo de tempo para que as requisições demorem mais pra ocorrer.  
 
 ```bash
-docker run --name jjba -p 8080:5000 -e "REQUEST_LATENCY=10" -d jjba:latest
+docker run --name jojoba -p 8080:5000 -e "REQUEST_LATENCY=10" -d jjba:latest
 ```
